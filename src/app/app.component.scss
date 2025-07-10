@@ -1,0 +1,116 @@
+
+// ...existing code...
+@import 'primeicons/primeicons.css';
+
+.aes-container {
+  max-width: 700px;
+  min-width: 350px;
+  margin: 40px auto;
+  padding: 32px 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.aes-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #2c3e50;
+}
+.aes-section {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+.aes-section:last-child {
+  border-bottom: none;
+}
+label {
+  display: block;
+  margin: 12px 0 4px 0;
+  font-weight: 500;
+  color: #34495e;
+}
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+input:focus {
+  border-color: #0078d7;
+  outline: none;
+}
+button {
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #005fa3;
+}
+.clear-btn {
+  margin-left: 8px;
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.clear-btn:hover {
+  background: #bdbdbd;
+}
+.result {
+  margin-top: 12px;
+  background: #f4f8fb;
+  padding: 10px 12px;
+  border-radius: 5px;
+  word-break: break-all;
+  color: #222;
+  font-size: 0.98rem;
+}
+.advanced-section {
+  background: #f8fafd;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 18px 18px 8px 18px;
+  margin-bottom: 24px;
+}
+.advanced-section h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #0078d7;
+  font-size: 1.1rem;
+}
+.adv-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.adv-row label {
+  min-width: 180px;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: #333;
+}
+.adv-row input, .adv-row select {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+// ...existing code...

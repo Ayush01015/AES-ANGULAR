@@ -1,0 +1,24 @@
+.back-btn {
+  margin-bottom: 18px;
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.back-btn:hover {
+  background: #bdbdbd;
+}
+.cryptojs-message {
+  margin: 12px 0 0 0;
+  color: #b71c1c;
+  background: #fff3f3;
+  border: 1px solid #ffcdd2;
+  border-radius: 5px;
+  padding: 10px 14px;
+  font-weight: 500;
+  font-size: 1rem;
+}
