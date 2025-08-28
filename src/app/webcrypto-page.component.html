@@ -1,3 +1,79 @@
-<!-- <button (click)="goBack()" class="back-btn">Back</button> -->
-<!-- Place the full encryption UI here, no need for ngIf or ng-content -->
-<!-- You can move the encryption form HTML from app.component.html to here -->
+<div class="aes-container">
+  <div class="header-section">
+    <h2>Web Crypto API AES Encryption/Decryption</h2>
+    <button (click)="goToCryptoJS()" class="switch-btn">Switch to CryptoJS</button>
+  </div>
+
+  <div class="aes-section">
+    <h3>Encrypt</h3>
+    <label for="plainText">Text to Encrypt:</label>
+    <input id="plainText" type="text" [(ngModel)]="plainText" placeholder="Enter text" />
+    <label for="encryptKey">Security Key:</label>
+    <input id="encryptKey" type="text" [(ngModel)]="encryptKey" placeholder="Enter key" />
+    <button (click)="encrypt()" [disabled]="!plainText || !encryptKey">Encrypt</button>
+    <button (click)="clearEncrypt()" type="button" class="clear-btn">Clear</button>
+    <div *ngIf="encryptedText" class="result">
+      <strong>Encrypted Value:</strong>
+      <span style="word-break: break-all;">{{ encryptedText }}</span>
+    </div>
+  </div>
+
+  <div class="aes-section">
+    <h3>Decrypt</h3>
+    <label for="encryptedInput">Encrypted Value:</label>
+    <input id="encryptedInput" type="text" [(ngModel)]="encryptedInput" placeholder="Enter encrypted value" />
+    <label for="decryptKey">Security Key:</label>
+    <input id="decryptKey" type="text" [(ngModel)]="decryptKey" placeholder="Enter key" />
+    <button (click)="decrypt()" [disabled]="!encryptedInput || !decryptKey">Decrypt</button>
+    <button (click)="clearDecrypt()" type="button" class="clear-btn">Clear</button>
+    <div *ngIf="decryptedText" class="result">
+      <strong>Decrypted Value:</strong>
+      <span style="word-break: break-all;">{{ decryptedText }}</span>
+    </div>
+  </div>
+
+  <div style="margin: 16px 0 24px 0;">
+    <label style="font-weight: 500;">
+      <input type="checkbox" [(ngModel)]="showAdvanced" /> Advanced Options
+    </label>
+  </div>
+
+  <div *ngIf="showAdvanced" class="advanced-section">
+    <h4>Advanced Encryption Options</h4>
+    <div class="adv-row">
+      <label>Salt (comma-separated bytes, 16 bytes):</label>
+      <input type="text" [(ngModel)]="advSalt" placeholder="e.g. 1,2,3,..." />
+    </div>
+    <div class="adv-row">
+      <label>IV (comma-separated bytes, 12 bytes):</label>
+      <input type="text" [(ngModel)]="advIV" placeholder="e.g. 1,2,3,..." />
+    </div>
+    <div class="adv-row">
+      <label>PBKDF2 Iterations:</label>
+      <input type="number" [(ngModel)]="advIterations" min="1000" />
+    </div>
+    <div class="adv-row">
+      <label>PBKDF2 Hash:</label>
+      <select [(ngModel)]="advHash">
+        <option value="SHA-256">SHA-256</option>
+        <option value="SHA-384">SHA-384</option>
+        <option value="SHA-512">SHA-512</option>
+      </select>
+    </div>
+    <div class="adv-row">
+      <label>AES Name:</label>
+      <select [(ngModel)]="advAesName">
+        <option value="AES-GCM">AES-GCM</option>
+        <option value="AES-CBC">AES-CBC</option>
+      </select>
+    </div>
+    <div class="adv-row">
+      <label>AES Key Length:</label>
+      <select [(ngModel)]="advAesLength">
+        <option value="128">128</option>
+        <option value="192">192</option>
+        <option value="256">256</option>
+      </select>
+    </div>
+  </div>
+</div>

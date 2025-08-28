@@ -1,4 +1,44 @@
-<!-- <button (click)="goBack()" class="back-btn">Back</button> -->
-<div class="cryptojs-message">
-  <span>CryptoJS support coming soon. Please use Web Crypto API for now.</span>
+<div class="aes-container">
+  <div class="header-section">
+    <h2>CryptoJS AES Encryption/Decryption</h2>
+    <button (click)="goToWebCrypto()" class="switch-btn">Switch to Web Crypto API</button>
+  </div>
+
+  <div class="aes-section">
+    <h3>Encrypt</h3>
+    <label for="plainText">Text to Encrypt:</label>
+    <input id="plainText" type="text" [(ngModel)]="plainText" placeholder="Enter text" />
+    <label for="encryptKey">Security Key (Base64):</label>
+    <input id="encryptKey" type="text" [(ngModel)]="encryptKey" placeholder="Enter base64 key" />
+    <button (click)="encrypt()" [disabled]="!plainText || !encryptKey">Encrypt</button>
+    <button (click)="clearEncrypt()" type="button" class="clear-btn">Clear</button>
+    <div *ngIf="encryptedText" class="result">
+      <strong>Encrypted Value:</strong>
+      <span style="word-break: break-all;">{{ encryptedText }}</span>
+    </div>
+  </div>
+
+  <div class="aes-section">
+    <h3>Decrypt</h3>
+    <label for="encryptedInput">Encrypted Value:</label>
+    <input id="encryptedInput" type="text" [(ngModel)]="encryptedInput" placeholder="Enter encrypted value" />
+    <label for="decryptKey">Security Key (Base64):</label>
+    <input id="decryptKey" type="text" [(ngModel)]="decryptKey" placeholder="Enter base64 key" />
+    <button (click)="decrypt()" [disabled]="!encryptedInput || !decryptKey">Decrypt</button>
+    <button (click)="clearDecrypt()" type="button" class="clear-btn">Clear</button>
+    <div *ngIf="decryptedText" class="result">
+      <strong>Decrypted Value:</strong>
+      <span style="word-break: break-all;">{{ decryptedText }}</span>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h4>CryptoJS Implementation Details</h4>
+    <ul>
+      <li>Uses AES encryption in CBC mode</li>
+      <li>PKCS7 padding</li>
+      <li>Random IV generated for each encryption</li>
+      <li>Key should be provided as Base64 encoded string</li>
+    </ul>
+  </div>
 </div>
